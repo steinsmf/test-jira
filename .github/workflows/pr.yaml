@@ -10,7 +10,7 @@ jobs:
         name: jira-description-action
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          jira-token: ${{ secrets.JIRA_TOKEN }}
+          jira-token: ${{ secrets.JIRA_API_TOKEN }}
           jira-base-url: https://gradual-inc.atlassian.net
           use: both
           skip-branches: '^(main)$'
