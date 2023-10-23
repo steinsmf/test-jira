@@ -1,0 +1,16 @@
+name: jira-description-action
+on:
+  pull_request:
+    types: [opened, edited]
+jobs:
+  add-jira-description:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: cakeinpanic/jira-description-action@v0.7.0
+        name: jira-description-action
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          jira-token: ${{ secrets.JIRA_TOKEN }}
+          jira-base-url: https://gradual-inc.atlassian.net
+          skip-branches: '^(main)$'
+          jira-project-key: 'Gradual'
